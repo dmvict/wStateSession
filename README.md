@@ -8,3 +8,4 @@ Mixin to add persistent session storing functionality to a class. StateSession e
 npm install
 node sample/Sample.s
 ```
+
