@@ -45,6 +45,7 @@ function storageToSave( op )
 
 let Associates =
 {
+  opened : 0,
   storageFileName : '.sample.config.json',
   fileProvider : _.define.common( _.fileProvider ),
 }
