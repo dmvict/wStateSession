@@ -22,7 +22,10 @@
     "url": "https://github.com/Wandalen/wStateSession/issues"
   },
   "dependencies": {
-    "wTools": ""
+    "wTools": "",
+    "wProto": "",
+    "wFiles": "",
+    "wstatestorage": ""
   },
   "devDependencies": {
     "wTesting": "",
