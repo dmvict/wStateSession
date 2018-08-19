@@ -72,8 +72,10 @@ function sessionPrepare()
     }
   }
 
-  // debugger;
-  // self.storageSave();
+  debugger
+  if( self.storageFilePath !== undefined )
+  self.storageFilePath = self.storageFilePathToSaveGet();
+
   self.opened = 1;
 
   return exists;
