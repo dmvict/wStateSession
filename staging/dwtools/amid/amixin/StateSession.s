@@ -72,7 +72,6 @@ function sessionPrepare()
     }
   }
 
-  debugger
   if( self.storageFilePath !== undefined )
   self.storageFilePath = self.storageFilePathToSaveGet();
 
@@ -133,7 +132,7 @@ function sessionSave()
 {
   let self = this;
   _.assert( self.opened !== undefined );
-  _.assert( !!self.opened );
+  _.assert( !!self.opened, 'Cant save closed session' );
   _.assert( arguments.length === 0 );
   self.storageSave();
   return self;
