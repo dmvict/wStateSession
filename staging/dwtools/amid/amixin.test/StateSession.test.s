@@ -35,6 +35,8 @@ var _ = wTools;
 
 function trivial( test )
 {
+  let filesTree = { 'storage' : "{ random : 0.6397020320139724 }" }
+  let fileProvider = new _.FileProvider.Extract({ filesTree : filesTree });
 
   function SomeClass( o )
   {
@@ -69,8 +71,9 @@ function trivial( test )
   let Associates =
   {
     opened : 0,
-    storageFileName : '.test.config.json',
-    fileProvider : _.define.ownInstanceOf( _.FileProvider.Extract ),
+    storageFileName :  'storage',
+    storageFilePath :  '/storage',
+    fileProvider :  _.define.own( fileProvider ),
   }
 
   let Extend =
@@ -93,11 +96,17 @@ function trivial( test )
   /* */
 
   let sample = new SomeClass();
-  sample.storageLoad();
-  if( !sample.random )
+  let storageFilePath = sample.storageFilePath;
+  test.identical( sample.random, undefined );
+  sample.sessionOpen();
+  var expected = sample.fileProvider.fileReadJs( storageFilePath );
+  test.identical( sample.random, expected.random );
   sample.random = Math.random();
-  sample.storageSave();
-  console.log( 'sample.random', sample.storageFilePathToLoadGet(), sample.random );
+  sample.sessionClose();
+  var got = sample.fileProvider.fileReadJs( storageFilePath );
+  var expected = { random : sample.random };
+  test.identical( got, expected )
+  // console.log( 'sample.random', sample.storageFilePathToLoadGet(), sample.random );
 
   /* */
 
