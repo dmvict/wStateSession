@@ -92,17 +92,15 @@ function sessionOpen()
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
   _.assert( arguments.length === 0 );
-  _.assert( _.strIsNotEmpty( self.storageFileName ), 'expects string field {-storageFileName-}' );
+  _.assert( _.strIsNotEmpty( self.storageFileName ), 'Expects string field {-storageFileName-}' );
 
+  debugger;
   if( !self.storageLoad() )
   throw _.errBriefly
   (
-    'Cant open a session for ' + _.strQuote( self.storageFileName ) + '.\n' +
-    'Looked ' + _.strQuote( self.storageDirPathGet() ) + '.'
+    'Cant open a session ' + _.strQuote( self.storageFileName ) + '.\n'
+    + 'At ' + _.strQuote( self.storageFilePathToLoadGet() ) + '.'
   );
-
-  // debugger;
-  // _.sure( self.loadedStorages.length === 1 );
 
   self.opened = 1;
   return self;
@@ -121,8 +119,8 @@ function sessionClose()
   self.opened = 0;
   if( self.storageFilePath !== undefined )
   self.storageFilePath = null;
-  if( self.loadedStorages )
-  self.loadedStorages.splice( 0 );
+  if( self.storagesLoaded )
+  self.storagesLoaded.splice( 0 );
   return self;
 }
 
@@ -160,7 +158,7 @@ let Associates =
 let Restricts =
 {
   /* storageToSave : null, */
-  /* loadedStorages : _.define.own( [] ), */
+  /* storagesLoaded : _.define.own( [] ), */
   /* opened : 0, */
 }
 
