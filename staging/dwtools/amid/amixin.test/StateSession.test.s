@@ -49,13 +49,11 @@ function trivial( test )
     _.instanceInit( sample );
   }
 
-  function storageLoaded( storage, op )
+  function storageLoaded( op )
   {
     let self = this;
     let result = _.StateStorage.prototype.storageLoaded.call( self, storage, op );
-
-    self.random = storage.random;
-
+    self.random = op.storage.random;
     return result;
   }
 
