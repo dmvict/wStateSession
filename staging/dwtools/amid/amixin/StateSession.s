@@ -10,7 +10,6 @@
  * @file files/StateSession.s.
  */
 
-
 if( typeof module !== 'undefined' )
 {
 
@@ -139,10 +138,17 @@ function sessionSave()
 //
 // --
 
+let MustHave =
+{
+  opened : null,
+}
+
+let CouldHave =
+{
+}
+
 let Composes =
 {
-  /* storageFileName : '.storage', */
-  /* storageFilePath : null, */
 }
 
 let Aggregates =
@@ -151,14 +157,10 @@ let Aggregates =
 
 let Associates =
 {
-  /* fileProvider : null, */
 }
 
 let Restricts =
 {
-  /* storageToSave : null, */
-  /* storagesLoaded : _.define.own( [] ), */
-  /* opened : 0, */
 }
 
 let Statics =
@@ -186,6 +188,9 @@ let Supplement =
   sessionSave : sessionSave,
 
   //
+
+  MustHave : MustHave,
+  CouldHave : CouldHave,
 
   Composes : Composes,
   Aggregates : Aggregates,

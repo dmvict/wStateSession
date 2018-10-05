@@ -52,7 +52,7 @@ function trivial( test )
   function storageLoaded( op )
   {
     let self = this;
-    let result = _.StateStorage.prototype.storageLoaded.call( self, storage, op );
+    let result = _.StateStorage.prototype.storageLoaded.call( self, op );
     self.random = op.storage.random;
     return result;
   }
