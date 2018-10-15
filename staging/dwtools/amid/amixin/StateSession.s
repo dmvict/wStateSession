@@ -91,7 +91,7 @@ function sessionOpen()
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
   _.assert( arguments.length === 0 );
-  _.assert( _.strIsNotEmpty( self.storageFileName ), 'Expects string field {-storageFileName-}' );
+  _.assert( _.strDefined( self.storageFileName ), 'Expects string field {-storageFileName-}' );
 
   if( !self.storageLoad() )
   throw _.errBriefly
