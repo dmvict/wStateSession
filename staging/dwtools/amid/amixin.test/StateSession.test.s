@@ -100,7 +100,7 @@ function trivial( test )
   var expected = sample.fileProvider.fileReadJs( storageFilePath );
   test.identical( sample.random, expected.random );
   sample.random = Math.random();
-  sample.sessionClose();
+  sample.sessionCloseSaving();
   var got = sample.fileProvider.fileReadJs( storageFilePath );
   var expected = { random : sample.random };
   test.identical( got, expected )

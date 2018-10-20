@@ -54,11 +54,30 @@ Self.shortName = 'StateSession';
 //
 // --
 
-function sessionPrepare()
+function sessionCreate()
 {
   let self = this;
   let exists = true;
 
+  _.assert( self.opened !== undefined );
+  _.assert( !self.opened );
+  _.assert( arguments.length === 0 );
+
+  if( self.storageFilePath === null )
+  self.storageFilePath = self.storageFilePathToSaveGet();
+  self.opened = 1;
+
+  return exists;
+}
+
+//
+
+function sessionOpenOrCreate()
+{
+  let self = this;
+  let exists = true;
+
+  _.assert( self.storageFilePath !== undefined );
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
   _.assert( arguments.length === 0 );
@@ -71,10 +90,7 @@ function sessionPrepare()
     }
   }
 
-  if( self.storageFilePath === null )
-  self.storageFilePath = self.storageFilePathToSaveGet();
-
-  self.opened = 1;
+  self.sessionCreate();
 
   return exists;
 }
@@ -111,14 +127,32 @@ function sessionClose()
   let self = this;
   _.assert( self.opened !== undefined );
   _.assert( arguments.length === 0 );
+
   if( !self.opened )
-  return;
-  self.sessionSave();
+  {
+    return self ;
+  }
+
   self.opened = 0;
   if( self.storageFilePath !== undefined )
   self.storageFilePath = null;
   if( self.storagesLoaded )
   self.storagesLoaded.splice( 0 );
+
+  return self;
+}
+
+//
+
+function sessionCloseSaving()
+{
+  let self = this;
+  _.assert( self.opened !== undefined );
+  _.assert( arguments.length === 0 );
+  if( !self.opened )
+  return;
+  self.sessionSave();
+  self.sessionClose();
   return self;
 }
 
@@ -145,6 +179,7 @@ let MustHave =
 
 let CouldHave =
 {
+  storageFilePath : null,
 }
 
 let Composes =
@@ -182,9 +217,11 @@ let Accessors =
 let Supplement =
 {
 
-  sessionPrepare : sessionPrepare,
+  sessionCreate : sessionCreate,
+  sessionOpenOrCreate : sessionOpenOrCreate,
   sessionOpen : sessionOpen,
   sessionClose : sessionClose,
+  sessionCloseSaving : sessionCloseSaving,
   sessionSave : sessionSave,
 
   //
