@@ -77,7 +77,6 @@ function sessionOpenOrCreate()
   let self = this;
   let exists = true;
 
-  _.assert( self.storageFilePath !== undefined );
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
   _.assert( arguments.length === 0 );
