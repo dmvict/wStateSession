@@ -44,7 +44,7 @@ let _ = _global_.wTools;
 let Parent = null;
 let Self = function wStateSession( o )
 {
-  _.assert( arguments.length === 0 || arguments.length === 1, 'expects single argument' );
+  _.assert( arguments.length === 0 || arguments.length === 1, 'Expects single argument' );
   return _.instanceConstructor( Self, this, arguments );
 }
 
