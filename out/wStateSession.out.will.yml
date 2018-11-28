@@ -167,8 +167,8 @@ reflector:
       ./dwtools/amid/amixin/StateSession.s: true
       ./dwtools/amid/amixin.test/StateSession.test.s: true
     srcFilter:
-      basePath: ./proto
-      prefixPath: .
+      basePath: .
+      prefixPath: proto
     dstFilter:
       basePath: .
       prefixPath: .
