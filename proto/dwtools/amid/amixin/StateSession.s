@@ -199,25 +199,25 @@ let Accessors =
 let Supplement =
 {
 
-  sessionCreate : sessionCreate,
-  sessionOpenOrCreate : sessionOpenOrCreate,
-  sessionOpen : sessionOpen,
-  sessionClose : sessionClose,
-  sessionCloseSaving : sessionCloseSaving,
-  sessionSave : sessionSave,
+  sessionCreate,
+  sessionOpenOrCreate,
+  sessionOpen,
+  sessionClose,
+  sessionCloseSaving,
+  sessionSave,
 
   //
 
-  MustHave : MustHave,
-  CouldHave : CouldHave,
+  MustHave,
+  CouldHave,
 
-  Composes : Composes,
-  Aggregates : Aggregates,
-  Associates : Associates,
-  Restricts : Restricts,
-  Statics : Statics,
-  Forbids : Forbids,
-  Accessors : Accessors,
+  Composes,
+  Aggregates,
+  Associates,
+  Restricts,
+  Statics,
+  Forbids,
+  Accessors,
 
 }
 
