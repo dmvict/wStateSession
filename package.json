@@ -28,8 +28,7 @@
     "wstatestorage": ""
   },
   "devDependencies": {
-    "wTesting": "",
-    "wstatesession": "."
+    "wTesting": ""
   },
   "keywords": [
     "wTools"
