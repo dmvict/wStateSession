@@ -57,13 +57,11 @@ path:
       - .
       - ./dwtools
       - ./dwtools/Tools.s
-      - ./dwtools/abase
       - ./dwtools/amid
       - ./dwtools/amid/amixin
       - ./dwtools/amid/amixin/StateSession.s
       - ./dwtools/amid/amixin.test
       - ./dwtools/amid/amixin.test/StateSession.test.s
-      - ./dwtools/atop
     criterion:
       default: 1
       debug: 1
@@ -91,6 +89,8 @@ reflector:
     filePath:
       ./proto: ./out.release
     srcFilter:
+      filePath:
+        ./proto: ./out.release
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -114,6 +114,8 @@ reflector:
     filePath:
       ./proto: ./out.debug
     srcFilter:
+      filePath:
+        ./proto: ./out.debug
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -153,6 +155,7 @@ reflector:
   exported.0:
     filePath: ./proto
     srcFilter:
+      filePath: ./proto
       prefixPath: .
     dstFilter:
       prefixPath: .
@@ -163,6 +166,10 @@ reflector:
       ./dwtools/amid/amixin/StateSession.s: true
       ./dwtools/amid/amixin.test/StateSession.test.s: true
     srcFilter:
+      filePath:
+        ./dwtools/Tools.s: true
+        ./dwtools/amid/amixin/StateSession.s: true
+        ./dwtools/amid/amixin.test/StateSession.test.s: true
       basePath: .
       prefixPath: proto
     dstFilter:
