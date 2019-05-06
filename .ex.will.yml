@@ -21,8 +21,8 @@ execution :
 
 path :
 
-  repository : git+https://github.com/Wandalen/wStateSession.git
-  bugs : https://github.com/Wandalen/wStateSession/issues
+  repository : git+https:///github.com/Wandalen/wStateSession.git
+  bugs : https:///github.com/Wandalen/wStateSession/issues
 
 step :
 
