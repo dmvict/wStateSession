@@ -24,13 +24,13 @@ function trivial( test )
 
   function SomeClass( o )
   {
-    return _.instanceConstructor( SomeClass, this, arguments );
+    return _.workpiece.construct( SomeClass, this, arguments );
   }
 
   function init( o )
   {
     let sample = this;
-    _.instanceInit( sample );
+    _.workpiece.initFields( sample );
   }
 
   function storageLoaded( op )

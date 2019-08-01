@@ -35,7 +35,7 @@ let Parent = null;
 let Self = function wStateSession( o )
 {
   _.assert( arguments.length === 0 || arguments.length === 1, 'Expects single argument' );
-  return _.instanceConstructor( Self, this, arguments );
+  return _.workpiece.construct( Self, this, arguments );
 }
 
 Self.shortName = 'StateSession';
