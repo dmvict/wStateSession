@@ -1,18 +1,17 @@
-
 {
   "name": "wstatesession",
-  "version": "0.3.0",
-  "description": "___",
+  "version": "0.3.62",
+  "description": "Mixin to add persistent session storing functionality to a class. StateSession extends StateStorage. These modules solve the common problem to persistently store the state( session ) of an object. Them let save the state in a specific moment ( for example on process exit ) and to restore the state later ( for example on process start ). Use the module to be more cross-platform, don't repeat yourself and forget about details of implementation you don't worry.",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "license": "MIT",
-  "main": "proto/dwtools/amid/___",
+  "main": "proto/dwtools/amid/amixin/StateSession.s",
   "files": [
-    "proto/dwtools/amid",
+    "proto/dwtools/amid/amixin",
     "proto/dwtools/Tools.s",
     "production"
   ],
   "scripts": {
-    "test": "wtest proto",
+    "test": "wtest .run proto/**",
     "docgen": "wdocgen proto"
   },
   "repository": {
@@ -23,7 +22,10 @@
     "url": "https://github.com/Wandalen/wStateSession/issues"
   },
   "dependencies": {
-    "wTools": ""
+    "wTools": "",
+    "wProto": "",
+    "wFiles": "",
+    "wstatestorage": ""
   },
   "devDependencies": {
     "wTesting": ""

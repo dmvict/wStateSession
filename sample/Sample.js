@@ -7,7 +7,7 @@ require( 'wstatesession' );
 
 let Self = function wSample( o )
 {
-  return _.instanceConstructor( Self, this, arguments );
+  return _.workpiece.construct( Self, this, arguments );
 }
 
 //
