@@ -101,7 +101,7 @@ function trivial( test )
 var Self =
 {
 
-  name : 'Tools/mid/StateSession',
+  name : 'Tools.mid.StateSession',
   silencing : 1,
 
   tests :

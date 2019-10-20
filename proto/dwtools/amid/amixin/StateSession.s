@@ -122,7 +122,7 @@ function sessionOpen()
   _.assert( _.strDefined( self.storageFileName ), 'Expects string field {-storageFileName-}' );
 
   if( !self.storageLoad() )
-  throw _.errBriefly
+  throw _.errBrief
   (
     'Cant open a session ' + _.strQuote( self.storageFileName ) + '.\n'
     + 'At ' + _.strQuote( self.storageFilePathToLoadGet() ) + '.'
