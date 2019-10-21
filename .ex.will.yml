@@ -23,7 +23,7 @@ about :
 path :
 
   repository : git+https:///github.com/Wandalen/wStateSession.git
-  remotes :
+  origins :
    - git+https:///github.com/Wandalen/wStateSession.git
    - npm:///wstatesession
   bugtracker : https:///github.com/Wandalen/wStateSession/issues
