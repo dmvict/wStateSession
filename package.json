@@ -18,11 +18,11 @@
   }, 
   "dependencies" : 
   {
-    "wTools" : "", 
-    "wProto" : "", 
-    "wFiles" : "", 
-    "wstatestorage" : ""
+    "wTools" : "beta", 
+    "wProto" : "beta", 
+    "wFiles" : "beta", 
+    "wstatestorage" : "beta"
   }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  "devDependencies" : { "wTesting" : "beta" }, 
   "keywords" : [ "wTools" ]
 }
