@@ -6,12 +6,13 @@ consistency:
     hash: 2d2d123730f2997fc70e7aa03cb9e045
     size: 2137
   ../.im.will.yml: &ref_1
-    hash: 971370fac554f12f50f7dafcf86f0834
-    size: 5086
+    hash: 4133c87e2b1aee2232f159a0bc0df8a2
+    size: 5160
 module:
   wStateSession.out:
     about:
       name: wStateSession
+      org: noorg
       description: >-
         Mixin to add persistent session storing functionality to a class.
         StateSession extends StateStorage. These modules solve the common
@@ -64,9 +65,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wStateSession.git'
       origins:
@@ -76,15 +74,15 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wStateSession/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: .
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - ../package-lock.json
+          - ../package.json
+          - ../node_modules
       proto:
         path: ../proto
       export:
@@ -149,11 +147,13 @@ module:
         path: '{path::out.*=}/source/Index.s'
       exported.dir.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path: ../proto
       exported.files.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path:
@@ -344,6 +344,7 @@ module:
           prefixPath: ../proto
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
       exported.files.proto.export:
@@ -356,6 +357,7 @@ module:
         recursive: 0
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
     step:
@@ -802,6 +804,7 @@ module:
   ../:
     about:
       name: wStateSession
+      org: noorg
       description: >-
         Mixin to add persistent session storing functionality to a class.
         StateSession extends StateStorage. These modules solve the common
@@ -847,9 +850,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wStateSession.git'
       origins:
@@ -859,21 +859,21 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wStateSession/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: out
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - package-lock.json
+          - package.json
+          - node_modules
       proto:
-        path: ./proto
+        path: proto
       export:
         path: '{path::proto}/**'
       doc:
-        path: ./doc
+        path: doc
       out.raw.debug:
         criterion:
           debug: debug
@@ -1503,5 +1503,5 @@ module:
         hash: 2d2d123730f2997fc70e7aa03cb9e045
         size: 2137
       ../.im.will.yml:
-        hash: 971370fac554f12f50f7dafcf86f0834
-        size: 5086
+        hash: 4133c87e2b1aee2232f159a0bc0df8a2
+        size: 5160
