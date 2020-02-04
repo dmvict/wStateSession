@@ -60,7 +60,7 @@ function sessionCreate()
 
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
 
   if( self.storageFilePath === null )
   self.storageFilePath = self.storageFilePathToSaveGet();
@@ -85,7 +85,7 @@ function sessionOpenOrCreate()
 
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
 
   if( !self.opened )
   {
@@ -118,7 +118,7 @@ function sessionOpen()
 
   _.assert( self.opened !== undefined );
   _.assert( !self.opened );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
   _.assert( _.strDefined( self.storageFileName ), 'Expects string field {-storageFileName-}' );
 
   if( !self.storageLoad() )
@@ -145,7 +145,7 @@ function sessionClose()
 {
   let self = this;
   _.assert( self.opened !== undefined );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
 
   if( !self.opened )
   {
@@ -174,7 +174,7 @@ function sessionCloseSaving()
 {
   let self = this;
   _.assert( self.opened !== undefined );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
   if( !self.opened )
   return;
   self.sessionSave();
@@ -197,7 +197,7 @@ function sessionSave()
   let self = this;
   _.assert( self.opened !== undefined );
   _.assert( !!self.opened, 'Cant save closed session' );
-  _.assert( arguments.length === 0 );
+  _.assert( arguments.length === 0, 'Expects no arguments' );
   self.storageSave();
   return self;
 }
