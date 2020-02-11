@@ -6,7 +6,7 @@ Mixin to add persistent session storing functionality to a class. StateSession e
 ## Try out
 ```
 npm install
-node sample/Sample.s
+node sample/Sample.js
 ```
 
 
