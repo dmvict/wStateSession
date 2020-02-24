@@ -1534,6 +1534,4 @@ module:
       ../.im.will.yml:
         hash: 4133c87e2b1aee2232f159a0bc0df8a2
         size: 5160
-      wStateSession.out.will.yml:
-        hash: d0f6f2cb8e53ca5714fe5955a536afc7
-        size: 39538
+      wStateSession.out.will.yml: *ref_0
