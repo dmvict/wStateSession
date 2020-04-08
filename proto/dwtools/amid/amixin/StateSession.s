@@ -26,7 +26,8 @@ if( typeof module !== 'undefined' )
 /**
  * @classdesc Mixin to add persistent session storing functionality to a class.
  * @class wStateSession
- * @memberof module:Tools/mid/StateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 let _global = _global_;
@@ -50,7 +51,9 @@ Self.shortName = 'StateSession';
  * Opens new sesstion and prepares file path for a session storage.
  * Only one session can be created. Throws an Error if session is opened.
  * @function sessionCreate
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 function sessionCreate()
@@ -75,7 +78,9 @@ function sessionCreate()
  * @summary Creates new session or opens existing one.
  * @function sessionOpenOrCreate
  * @returns {Boolean} Returns true if session was loaded and false if session was created.
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 function sessionOpenOrCreate()
@@ -106,7 +111,9 @@ function sessionOpenOrCreate()
  * @summary Opens current session and loads storage.
  * @function sessionOpen
  * @returns {Object} Returns instance of `wStateSession`.
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 function sessionOpen()
@@ -138,7 +145,9 @@ function sessionOpen()
  * @summary Closes current session and removes loaded storages.
  * @function sessionClose
  * @returns {Object} Returns instance of `wStateSession`.
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 function sessionClose()
@@ -167,7 +176,9 @@ function sessionClose()
  * @summary Saves current session and closes it.
  * @function sessionCloseSaving
  * @returns {Object} Returns instance of `wStateSession`.
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 function sessionCloseSaving()
@@ -188,7 +199,9 @@ function sessionCloseSaving()
  * @summary Saves storage of current session to hard drive.
  * @function sessionSave
  * @returns {Object} Returns instance of `wStateSession`.
- * @memberof module:Tools/mid/StateSession.wStateSession#
+ * @class wStateSession
+ * @namespace wTools
+ * @module Tools/mid/StateSession
 */
 
 
