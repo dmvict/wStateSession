@@ -58,7 +58,7 @@ function trivial( test )
     fileProvider :  _.define.own( fileProvider ),
   }
 
-  let Extend =
+  let Extension =
   {
     init : init,
     storageLoaded : storageLoaded,
@@ -69,7 +69,7 @@ function trivial( test )
   _.classDeclare
   ({
     cls : SomeClass,
-    extend : Extend,
+    extend : Extension,
   });
 
   _.StateStorage.mixin( SomeClass );
