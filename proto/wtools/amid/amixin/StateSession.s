@@ -1,4 +1,5 @@
-( function _StateSession_s_() {
+( function _StateSession_s_()
+{
 
 'use strict';
 
@@ -302,7 +303,6 @@ _.classDeclare
 // --
 
 _global_[ Self.name ] = _[ Self.shortName ] = Self;
-
 
 
 if( typeof module !== 'undefined' )
