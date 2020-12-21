@@ -1,4 +1,5 @@
-( function _StateSession_test_s_( ) {
+( function _StateSession_test_s_( )
+{
 
 'use strict';
 
@@ -19,8 +20,8 @@ let _ = _global_.wTools;
 
 function trivial( test )
 {
-  let filesTree = { 'storage' : "{ random : 0.6397020320139724 }" }
-  let fileProvider = new _.FileProvider.Extract({ filesTree : filesTree });
+  let filesTree = { 'storage' : '{ random : 0.6397020320139724 }' }
+  let fileProvider = new _.FileProvider.Extract({ filesTree });
 
   function SomeClass( o )
   {
@@ -60,10 +61,10 @@ function trivial( test )
 
   let Extension =
   {
-    init : init,
-    storageLoaded : storageLoaded,
-    storageToSave : storageToSave,
-    Associates : Associates,
+    init,
+    storageLoaded,
+    storageToSave,
+    Associates,
   }
 
   _.classDeclare
@@ -92,7 +93,7 @@ function trivial( test )
 
   /* */
 
-  test.identical( 1,1 );
+  test.identical( 1, 1 );
 
 }
 
@@ -106,7 +107,7 @@ let Self =
 
   tests :
   {
-    trivial : trivial,
+    trivial,
   },
 
 }
