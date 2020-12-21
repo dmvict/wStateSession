@@ -5,7 +5,8 @@ require( 'wstatesession' );
 
 //
 
-let Self = function wSample( o )
+let Self = wSample;
+function wSample( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
@@ -46,7 +47,7 @@ function storageToSave( op )
 let Associates =
 {
   opened : 0,
-  storageFileName : '.sample.config.json',
+  storageFileName : __dirname + '../.sample.config.json',
   fileProvider : _.define.common( _.fileProvider ),
 }
 
@@ -55,11 +56,11 @@ let Associates =
 let Extend =
 {
 
-  init : init,
-  storageLoaded : storageLoaded,
-  storageToSave : storageToSave,
+  init,
+  storageLoaded,
+  storageToSave,
 
-  Associates : Associates,
+  Associates,
 
 }
 
@@ -77,7 +78,8 @@ _.StateSession.mixin( Self );
 //
 
 let sample = new Self();
-sample.sessionPrepare();
+sample.sessionOpenOrCreate()
+// sample.sessionPrepare();
 if( !sample.random )
 sample.random = Math.random();
 sample.sessionSave();
