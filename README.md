@@ -8,7 +8,7 @@ Mixin to add persistent session storing functionality to a class. StateSession e
 git clone https://github.com/Wandalen/wStateSession
 cd wStateSession
 npm install
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
