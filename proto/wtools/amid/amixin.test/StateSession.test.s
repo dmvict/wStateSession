@@ -14,7 +14,7 @@ if( typeof module !== 'undefined' )
 
 }
 
-let _ = _global_.wTools;
+const _ = _global_.wTools;
 
 //
 
@@ -99,7 +99,7 @@ function trivial( test )
 
 //
 
-let Self =
+const Proto =
 {
 
   name : 'Tools.mid.StateSession',
@@ -114,7 +114,7 @@ let Self =
 
 //
 
-Self = wTestSuite( Self );
+const Self = wTestSuite( Proto );
 if( typeof module !== 'undefined' && !module.parent )
 wTester.test( Self.name );
 

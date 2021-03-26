@@ -30,10 +30,10 @@ if( typeof module !== 'undefined' )
  * @module Tools/mid/StateSession
 */
 
-let _global = _global_;
-let _ = _global_.wTools;
-let Parent = null;
-let Self = wStateSession;
+const _global = _global_;
+const _ = _global_.wTools;
+const Parent = null;
+const Self = wStateSession;
 function wStateSession( o )
 {
   _.assert( arguments.length === 0 || arguments.length === 1, 'Expects single argument' );
