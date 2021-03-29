@@ -21,7 +21,7 @@ const _ = _global_.wTools;
 function trivial( test )
 {
   let filesTree = { 'storage' : '{ random : 0.6397020320139724 }' }
-  let fileProvider = new _.FileProvider.Extract({ filesTree });
+  const fileProvider = new _.FileProvider.Extract({ filesTree });
 
   function SomeClass( o )
   {
