@@ -5,7 +5,7 @@
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
   "main" : "proto/wtools/amid/amixin/StateSession.s",
-  "files" : [ "proto/wtools/amid/amixin", "proto/wtools/Tools.s", "out" ],
+  "files" : [ "proto/wtools/amid/amixin", "proto/wtools/Tools.s", "out", "proto/node_modules" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
@@ -23,6 +23,6 @@
     "wFiles" : "",
     "wstatestorage" : ""
   },
-  "devDependencies" : { "wTesting" : "", "eslint" : "7.1.0", "wstatesession" : "file:." },
+  "devDependencies" : { "wTesting" : "", "eslint" : "7.1.0" },
   "keywords" : [ "wTools" ]
 }
