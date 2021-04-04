@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wStateSession.out
 consistency:
-  wStateSession.out.will.yml: &ref_0
-    hash: e9a9503d4dd7882186ee92dc0b096a7a
-    size: 39639
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: fcf3e3ab3785e646a6ae89143db52f7a
     size: 2138
-  ../.im.will.yml: &ref_2
-    hash: ee4d65edda7b23d24dc5df0d19c7f6cc
-    size: 5265
+  ../.im.will.yml: &ref_1
+    hash: daa4519ec9be9b918539c9cdee9de3e1
+    size: 5218
 module:
   wStateSession.out:
     about:
@@ -26,18 +23,18 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wstatesession
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -68,7 +65,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ../
+        path: ..
       repository:
         path: 'git+https:///github.com/Wandalen/wStateSession.git'
       origins:
@@ -149,6 +146,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - ../proto/wtools/amid/amixin/StateSession.s
+          - ../proto/node_modules/wstatesession
       exported.dir.proto.export:
         criterion:
           generated: 1
@@ -716,24 +717,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -822,9 +805,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wStateSession.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wStateSession
@@ -839,20 +821,13 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wstatesession
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -881,7 +856,7 @@ module:
       download:
         criterion:
           predefined: 1
-        path: ./
+        path: .
       repository:
         path: 'git+https:///github.com/Wandalen/wStateSession.git'
       origins:
@@ -962,6 +937,10 @@ module:
           raw: compiled
           content: prime
         path: '{path::out.*=}/source/Index.s'
+      npm.proto.entry:
+        path:
+          - proto/wtools/amid/amixin/StateSession.s
+          - proto/node_modules/wstatesession
     submodule:
       wTools:
         path: 'npm:///wTools'
@@ -1532,6 +1511,5 @@ module:
         hash: fcf3e3ab3785e646a6ae89143db52f7a
         size: 2138
       ../.im.will.yml:
-        hash: ee4d65edda7b23d24dc5df0d19c7f6cc
-        size: 5265
-      wStateSession.out.will.yml: *ref_0
+        hash: daa4519ec9be9b918539c9cdee9de3e1
+        size: 5218
