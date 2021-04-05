@@ -86,8 +86,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wStateSession/proto/wtools/amid/amixin/StateSession.s
-    - /pro/module/wStateSession/proto/node_modules/wstatesession
+    - proto/wtools/amid/amixin/StateSession.s
+    - proto/node_modules/wstatesession
 reflector:
   reflect.proto:
     inherit: predefined.*
