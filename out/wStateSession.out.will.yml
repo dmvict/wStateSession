@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wStateSession.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wStateSession.out.will.yml: &ref_0
+    hash: 9cbad0bc1a6aa00419b0fab8d1843724
+    size: 40028
+  ../.ex.will.yml: &ref_1
     hash: fcf3e3ab3785e646a6ae89143db52f7a
     size: 2138
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 00b1068f657445ee679bacd62105e315
     size: 5166
 module:
@@ -23,18 +26,18 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wstatesession
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -165,9 +168,9 @@ module:
           - ../proto
           - ../proto/Integration.test.ss
           - ../proto/node_modules
+          - ../proto/node_modules/Tools
           - ../proto/node_modules/wstatesession
           - ../proto/wtools
-          - ../proto/wtools/Tools.s
           - ../proto/wtools/abase
           - ../proto/wtools/amid
           - ../proto/wtools/amid/amixin
@@ -717,6 +720,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          filePath: 'reflector::exported.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: 'reflector::exported.files.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -805,8 +826,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wStateSession.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wStateSession
@@ -821,13 +843,20 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wstatesession
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1513,3 +1542,6 @@ module:
       ../.im.will.yml:
         hash: 00b1068f657445ee679bacd62105e315
         size: 5166
+      wStateSession.out.will.yml:
+        hash: 9cbad0bc1a6aa00419b0fab8d1843724
+        size: 40028
