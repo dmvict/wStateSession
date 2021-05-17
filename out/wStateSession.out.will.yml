@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wStateSession.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: fcf3e3ab3785e646a6ae89143db52f7a
-    size: 2138
-  ../.im.will.yml: &ref_1
-    hash: 00b1068f657445ee679bacd62105e315
-    size: 5166
+  ../will.yml: &ref_0
+    hash: 3a21d206b498f3294d902097ebb5c466
+    size: 7088
 module:
   wStateSession.out:
     about:
@@ -23,18 +20,18 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      license: MIT
+      npm.name: wstatesession
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
+        - wTools
+      contributors: &ref_2
+        - Kostiantyn Wandalen <wanalen@01.school>
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
-        - wTools
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
-        - Kostiantyn Wandalen <wanalen@01.school>
-      npm.name: wstatesession
-      npm.scripts: &ref_5
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -49,15 +46,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -188,7 +181,7 @@ module:
         path: 'npm:///wFiles'
         autoExporting: 0
         enabled: 0
-      wStateStorage:
+      wstatestorage:
         path: 'npm:///wstatestorage'
         autoExporting: 0
         enabled: 0
@@ -805,8 +798,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wStateSession
@@ -821,26 +813,22 @@ module:
         details of implementation you don't worry.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wstatesession
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -954,7 +942,7 @@ module:
         path: 'npm:///wFiles'
         autoExporting: 0
         enabled: 0
-      wStateStorage:
+      wstatestorage:
         path: 'npm:///wstatestorage'
         autoExporting: 0
         enabled: 0
@@ -1507,9 +1495,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: fcf3e3ab3785e646a6ae89143db52f7a
-        size: 2138
-      ../.im.will.yml:
-        hash: 00b1068f657445ee679bacd62105e315
-        size: 5166
+      ../will.yml:
+        hash: 3a21d206b498f3294d902097ebb5c466
+        size: 7088
