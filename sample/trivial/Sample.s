@@ -1,7 +1,6 @@
 
-let _ = require( 'wTools' );
-require( 'wFiles' );
 require( 'wstatesession' );
+let _ = wTools;
 
 //
 
@@ -24,10 +23,9 @@ function init( o )
 function storageLoaded( storage, op )
 {
   let self = this;
-  let result = _.StateStorage.prototype.storageLoaded.call( self, storage, op );
 
+  let result = _.StateStorage.prototype.storageLoaded.call( self, { storage, storageFilePath : storage.storageFilePath } );
   self.random = storage.random;
-
   return result;
 }
 
@@ -38,7 +36,6 @@ function storageToSave( op )
   let self = this;
 
   let storage = { random : self.random };
-
   return storage;
 }
 
@@ -47,9 +44,9 @@ function storageToSave( op )
 let Associates =
 {
   opened : 0,
-  storageFileName : __dirname + '../.sample.config.json',
+  storageFileName : _.path.join( __dirname, '../.sample.config.json' ),
   fileProvider : _.define.common( _.fileProvider ),
-}
+};
 
 //
 
@@ -62,7 +59,7 @@ let Extend =
 
   Associates,
 
-}
+};
 
 //
 
@@ -79,8 +76,11 @@ _.StateSession.mixin( Self );
 
 let sample = new Self();
 sample.sessionOpenOrCreate()
-// sample.sessionPrepare();
 if( !sample.random )
 sample.random = Math.random();
 sample.sessionSave();
 console.log( 'sample.random', sample.storageFilePathToLoadGet(), sample.random );
+
+/* comment next line if needs to check storage */
+sample.fileProvider.filesDelete( sample.storageFilePathToLoadGet() );
+
